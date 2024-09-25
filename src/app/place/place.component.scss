@@ -1,0 +1,87 @@
+
+
+
+
+
+
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيق العناوين */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* تنسيق حقول الإدخال */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+/* تنسيق الجدول */
+table {
+    width: 100%;
+    border-collapse: collapse; /* دمج حدود الخلايا */
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px; /* زيادة المسافة داخل الخلايا */
+    text-align: center; /* توسيط النص داخل الخلايا */
+    border: 1px solid #ddd; /* حدود خفيفة للخلايا */
+}
+
+th {
+    background-color: #28a745; /* لون خلفية لرأس الجدول */
+    color: white; /* لون النص لرأس الجدول */
+}
+
+td {
+    background-color: #f9f9f9; /* لون خلفية للخلايا */
+}
+
+#results {
+    margin-top: 20px;
+    padding: 15px; /* زيادة المسافة داخل قسم النتائج */
+    background-color: #e7f4e4;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    text-align: center; /* توسيط النص */
+    font-size: 18px; /* زيادة حجم الخط */
+}
+
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#results {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e7f4e4;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+}
