@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<body>
+
+  <div class="container mt-5 pt-5">
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle custom-dropdown-btn" type="button" id="dropdownMenuButton"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        اختر اسم المعيد من القائمة
+      </button>
+      <ul class="dropdown-menu custom-dropdown-menu" aria-labelledby="dropdownMenuButton" id="doctorList">
+        <!-- سيتم إضافة أسماء الدكاترة هنا -->
+      </ul>
+    </div>
+
+    <div class="text-center mt-3">
+      <button class="btn btn-success" id="add-doctor" (click)="addDoctor()">إضافة معيد جديد</button>
+    </div>
+
+    <div class="text-center mt-3">
+      <button class="btn btn-danger p-2" id="delete-doctor" (click)="deleteDoctor()">حذف معيد</button>
+    </div>
+
+    <!-- هنا سيتم عرض بيانات الدكتور المختار -->
+    <div id="displaySection" class="mt-4 p-3 border rounded bg-light shadow"></div>
+  </div>
+
+
+  <div class="schedule-container mt-5 mb-5">
+    <h1>جدول القاعات</h1>
+    <!-- Sections  -->
+
+    <!-- الجدول الدراسي -->
+    <div class="container mb-5">
+      <div id="weekly-schedule">
+        <div class="text-center w-100 d-flex justify-content-center ">
+          <button id="save-schedule" class="btn btn-success m-3" (click)="saveSchedule()">حفظ الجدول</button>
+          <button id="edit-schedule" class="btn btn-primary m-3" (click)="editSchedule()">تعديل الجدول</button>
+        </div>
+        <div class="text-center mt-3">
+          <button class="btn btn-primary py-1 px-2 m-3" id="download-pdf" (click)="downloadPDF()">تنزيل الجدول كـ PDF</button>
+        </div>
+        
+        <h2 id="subject-title"></h2>
+        <div class="schedule-content text-center">
+          <div class="table-container">
+            <div class="row">
+              <div class="col-md-12">
+                <table id="schedule-table">
+                  <thead>
+                    <tr>
+                      <th>اليوم</th>
+                      <th>9:00 - 10:30</th>
+                      <th>10:40 - 12:10</th>
+                      <th>12:30 - 2:00</th>
+                      <th>2:10 - 3:40</th>
+                      <th>3:50 - 5:20</th>
+                      <th>5:30 - 7:00</th>
+                    </tr>
+                  </thead>
+                  <tbody class="fw-bold fa-2x">
+                    <tr>
+                      <td>السبت</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>الأحد</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>الإثنين</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>الثلاثاء</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>الأربعاء</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>الخميس</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="bg-dark d-flex justify-content-center align-items-center fixed-bottom text-light text-center py-2">
+    <p>Ahmed Hany &copy; Copyright 2024</p>
+</footer>
+
+  <script src="./assets/js/bootstrap.bundle.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jspdf-arabic/dist/jspdf-arabic.min.js"></script>
+
+</body>
+
+</html>

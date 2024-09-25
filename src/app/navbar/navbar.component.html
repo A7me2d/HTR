@@ -1,0 +1,27 @@
+
+
+
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">فريق الجدول</a>
+        
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <li *ngIf="!isbool" class="nav-item text-light text-decoration-none d-flex gx-5 me-5">
+                <a class="nav-link" routerLinkActive="isActive" routerLink="/sigin" (click)="logout()">Log out</a>
+            </li>
+            <ul  class="navbar-nav m-auto mt-2 mt-lg-0 fw-bold">
+                <li *ngIf="!isbool" class="nav-item">
+                    <a class="nav-link" routerLinkActive="isActive" routerLink="/home">Doctor</a>
+                </li>
+                <li *ngIf="!isbool" class="nav-item">
+                    <a class="nav-link" routerLinkActive="isActive" routerLink="/assist">Assistant</a>
+                </li>
+                <li *ngIf="!isbool" class="nav-item">
+                    <a class="nav-link" routerLinkActive="isActive" routerLink="/place">Places</a>
+                </li>
+               
+            </ul>
+        </div>
+    </div>
+</nav>
