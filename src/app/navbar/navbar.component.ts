@@ -12,18 +12,28 @@ export class NavbarComponent implements OnInit {
   
 
   constructor() { }
-isbool:boolean  = false;
-  ngOnInit(): void {
-    console.log(this.userdata)
 
+
+isbool:boolean  = false;
+isbool2:boolean  = false;
+
+
+  ngOnInit(): void {
     if(this.userdata !== 'Master Ahmed') {
      this.isbool = true;
+      // console.log(this.isbool);
+    }
+    if (this.userdata !== 'zahra'){
+      this.isbool2 = true;
+      // console.log(this.userdata);
+      // console.log(this.isbool2);
     }else{
-      console.log(this.userdata,"kk");
       this.isbool = false;
+      this.isbool2 = false;
+      // console.log("not works")
     }
 
- 
+
 
   }
 

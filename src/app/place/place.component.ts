@@ -32,7 +32,7 @@ export class PlaceComponent {
         this.clearResults();
         const hashedPassword = CryptoJS.SHA256(this.password).toString();
         const user = data.find((person: any) => person.user === this.email && person.pass === hashedPassword);
-
+          console.log(hashedPassword);
         if (user) {
           this.resultsMessage = 'بياناتك صحيحه.';
           this.accountName = `مرحب سياده الدكتور : ${user.subject}`;

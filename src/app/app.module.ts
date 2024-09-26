@@ -8,10 +8,10 @@ import { AssistComponent } from './assist/assist.component';
 import { PlaceComponent } from './place/place.component';
 import { SiginComponent } from './sigin/sigin.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { NotfoundComponent } from './notfound/notfound.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
+import { DashpordComponent } from './dashpord/dashpord.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +21,8 @@ import { FooterComponent } from './footer/footer.component';
     PlaceComponent,
     SiginComponent,
     NavbarComponent,
-    NotfoundComponent,
-    FooterComponent
+    FooterComponent,
+    DashpordComponent
   ],
   imports: [
     BrowserModule,

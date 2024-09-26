@@ -16,6 +16,10 @@ export class SiginComponent {
   private pass: string = '';
   private userofmaster: string = '';
 
+  private user2: string = '';
+  private pass2: string = '';
+  private userofmaster2: string = '';
+
   constructor() {
     this.fetchUserData();
   }
@@ -28,6 +32,11 @@ export class SiginComponent {
           this.user = jsonData[0].user;
           this.userofmaster = jsonData[0].username;
           this.pass = jsonData[0].pass;
+
+
+          this.user2 = jsonData[1].user;
+          this.userofmaster2 = jsonData[1].username;
+          this.pass2 = jsonData[1].pass;
         }
       })
       .catch(error => console.error('Error fetching data:', error));
@@ -39,7 +48,12 @@ export class SiginComponent {
     if (this.email === this.user && hashedPassword === this.pass) {
       localStorage.setItem('token', this.userofmaster);
       window.location.href = ' ';
-    } else {
+    } else if(this.email === this.user2 && hashedPassword === this.pass2) {
+
+      localStorage.setItem('token', this.userofmaster2);
+      window.location.href = ' ';
+
+    }else{
       this.showError = true;
     }
   }

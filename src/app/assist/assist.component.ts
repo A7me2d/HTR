@@ -12,8 +12,20 @@ export class AssistComponent implements OnInit {
   apiUrl = 'https://66cb41954290b1c4f199e054.mockapi.io/assistant';
   data: any[] = [];
 
+  userdata: any = localStorage.getItem('token')
+
+  isbool:boolean  = false
+
   ngOnInit() {
     this.fetchData();
+
+    
+    if(this.userdata !== 'Master Ahmed') {
+      this.isbool = true;
+     }else{
+       this.isbool = false;
+     }
+     
   }
 
   // Fetch data from API

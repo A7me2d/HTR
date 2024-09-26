@@ -1,10 +1,10 @@
+import { DashpordComponent } from './dashpord/dashpord.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AssistComponent } from './assist/assist.component';
 import { PlaceComponent } from './place/place.component';
 import { SiginComponent } from './sigin/sigin.component';
-import { NotfoundComponent } from './notfound/notfound.component';
 import { authGuard } from './auth.guard';
 
 const routes: Routes = [
@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: 'assist',canActivate:[authGuard], component: AssistComponent },
   { path: 'place' ,component: PlaceComponent },
   { path: 'sigin', component: SiginComponent },
-  { path: '**', component: NotfoundComponent }
+  { path: 'dashboard',canActivate:[authGuard], component: DashpordComponent },
+  { path: '**',canActivate:[authGuard], component: HomeComponent }
 ];
 
 @NgModule({

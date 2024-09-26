@@ -14,11 +14,11 @@
       </ul>
     </div>
 
-    <div class="text-center mt-3">
+    <div *ngIf="!isbool" class="text-center mt-3">
       <button class="btn btn-success" id="add-doctor" (click)="addDoctor()">إضافة دكتور جديد</button>
     </div>
 
-    <div class="text-center mt-3">
+    <div *ngIf="!isbool" class="text-center mt-3">
       <button class="btn btn-danger p-2" id="delete-doctor" (click)="deleteDoctor()">حذف دكتور</button>
     </div>
 
@@ -34,7 +34,7 @@
     <!-- الجدول الدراسي -->
     <div class="container mb-5">
       <div id="weekly-schedule">
-        <div class="text-center w-100 d-flex justify-content-center ">
+        <div *ngIf="!isbool" class="text-center w-100 d-flex justify-content-center">
           <button id="save-schedule" class="btn btn-success m-3" (click)="saveSchedule()">حفظ الجدول</button>
           <button id="edit-schedule" class="btn btn-primary m-3" (click)="editSchedule()">تعديل الجدول</button>
         </div>

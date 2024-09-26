@@ -13,9 +13,23 @@ export class HomeComponent implements OnInit {
   apiUrl = 'https://66cb41954290b1c4f199e054.mockapi.io/study';
   data: any[] = [];
 
+  userdata: any = localStorage.getItem('token')
+
+  isbool:boolean  = false
+  
   ngOnInit() {
     this.fetchData();
+
+
+    if(this.userdata !== 'Master Ahmed') {
+     this.isbool = true;
+    }else{
+      this.isbool = false;
+    }
+
   }
+
+
 
   // Fetch data from API
   fetchData() {
