@@ -20,10 +20,13 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLinkActive="isActive" routerLink="/place">Places</a>
                 </li>
+           
+                <li *ngIf="!isbool" class="nav-item">
+                    <a class="nav-link" routerLinkActive="isActive" routerLink="/tablePlaces">TablePlaces</a>
+                </li>
                 <li *ngIf="!isbool" class="nav-item">
                     <a class="nav-link" routerLinkActive="isActive" routerLink="/dashboard">Dashboard</a>
                 </li>
-               
             </ul>
         </div>
     </div>

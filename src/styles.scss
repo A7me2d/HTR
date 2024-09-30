@@ -6,7 +6,6 @@
 
 
 
-
 * {
     padding: 0;
     margin: 0;
@@ -21,10 +20,9 @@
   body {
     font-family: 'Arial', sans-serif;
     direction: rtl;
-    /* background-color: #f4f4f4; */
-    // background-image: url(../src/assets/3516804.jpg);
     margin: 0;
     padding: 0;
+    background-image: url(../src/assets/3516804.jpg);
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -32,11 +30,11 @@
   }
   
   .schedule-container {
-    width: 80%;
-    max-width: 1200px;
+    // width: 80%;
+    // max-width: 1200px;
     margin: auto;
     background-color: #fff;
-    padding: 30px;
+    // padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   }

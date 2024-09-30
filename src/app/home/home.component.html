@@ -1,8 +1,4 @@
 
-<!DOCTYPE html>
-<html lang="ar">
-<body>
-
   <div class="container mt-5 pt-5">
     <div class="dropdown">
       <button class="btn btn-primary dropdown-toggle custom-dropdown-btn" type="button" id="dropdownMenuButton"
@@ -42,7 +38,15 @@
           <button class="btn btn-primary py-1 px-2 m-3" id="download-pdf" (click)="downloadPDF()">تنزيل الجدول كـ PDF</button>
         </div>
         
-        <h2 id="subject-title"></h2>
+        <div class="name-email d-flex justify-content-between">
+          
+          <h2 id="subject-title"></h2>
+
+          <h2 id="subject-email"></h2>
+
+        </div>
+ 
+
         <div class="schedule-content text-center">
           <div class="table-container">
             <div class="row">
@@ -124,20 +128,3 @@
     </div>
   </div>
 
-
-  <script src="./assets/js/bootstrap.bundle.js"></script>
-  <script src="./assets/js/script.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/jspdf-arabic/dist/jspdf-arabic.min.js"></script>
-
-</body>
-
-</html>

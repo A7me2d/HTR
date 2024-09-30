@@ -6,6 +6,7 @@ import { AssistComponent } from './assist/assist.component';
 import { PlaceComponent } from './place/place.component';
 import { SiginComponent } from './sigin/sigin.component';
 import { authGuard } from './auth.guard';
+import { TableplacesComponent } from './tableplaces/tableplaces.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'place' ,component: PlaceComponent },
   { path: 'sigin', component: SiginComponent },
   { path: 'dashboard',canActivate:[authGuard], component: DashpordComponent },
+  { path: 'tablePlaces',canActivate:[authGuard], component: TableplacesComponent },
   { path: '**',canActivate:[authGuard], component: HomeComponent }
 ];
 

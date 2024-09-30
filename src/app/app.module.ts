@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { DashpordComponent } from './dashpord/dashpord.component';
+import { TableplacesComponent } from './tableplaces/tableplaces.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DashpordComponent } from './dashpord/dashpord.component';
     SiginComponent,
     NavbarComponent,
     FooterComponent,
-    DashpordComponent
+    DashpordComponent,
+    TableplacesComponent
   ],
   imports: [
     BrowserModule,

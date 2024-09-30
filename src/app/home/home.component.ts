@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
+import * as CryptoJS from 'crypto-js';
 
 
 
@@ -42,7 +43,6 @@ export class HomeComponent implements OnInit {
       .catch(error => console.error('Error fetching data:', error));
   }
 
-  // Populate the dropdown list with doctor names
   populateDoctorList() {
     const doctorList = document.getElementById('doctorList');
     if (doctorList) {
@@ -50,27 +50,31 @@ export class HomeComponent implements OnInit {
         const listItem = document.createElement('li');
         const link = document.createElement('a');
         link.className = 'dropdown-item custom-dropdown-item';
-        // link.href = '#';
-        link.textContent = doctor.subject;
-        link.addEventListener('click', () => this.displayData(doctor.id));
+
+        if(doctor.subject != null){
+        link.textContent = doctor.subject;          
+        listItem.addEventListener('click', () => this.displayData(doctor.id));
         listItem.appendChild(link);
         doctorList.appendChild(listItem);
+      }
       });
     }
   }
 
-  // Function to display data for the specified ID
   displayData(id: string) {
     const item = this.data.find(d => d.id === id);
     const subjectTitle = document.getElementById('subject-title');
     const scheduleTableBody = document.querySelector('#schedule-table tbody');
+    const email = document.getElementById('subject-email');
 
     if (scheduleTableBody) {
-      // تفريغ الجدول قبل ملئه
+
       scheduleTableBody.innerHTML = '';
 
-      if (item && subjectTitle) {
+      if (item && subjectTitle && email) {
         subjectTitle.textContent = item.subject;
+        email.textContent = item.user;
+
 
         item.schedule.forEach((schedule: { day: string | null; times: any[]; }) => {
           const row = document.createElement('tr');
@@ -81,29 +85,24 @@ export class HomeComponent implements OnInit {
           schedule.times.forEach(time => {
             const cell = document.createElement('td');
 
-            // عرض المادة كـ نص
             const materialText = document.createElement('span');
             materialText.textContent = time.material;
 
-            // عرض الغرفة كـ نص
             const roomText = document.createElement('span');
             roomText.textContent = time.room ? ` (غرفة: ${time.room})` : '';
 
-            // حقل إدخال لاسم المادة (مخفي افتراضيًا)
             const inputMaterial = document.createElement('input');
             inputMaterial.type = 'text';
             inputMaterial.value = time.material;
-            inputMaterial.className = 'material-input form-control hidden'; // مخفي
+            inputMaterial.className = 'material-input form-control hidden'; 
             inputMaterial.placeholder = 'اسم المادة';
 
-            // حقل إدخال لرقم الغرفة (مخفي افتراضيًا)
             const inputRoom = document.createElement('input');
             inputRoom.type = 'text';
             inputRoom.value = time.room;
-            inputRoom.className = 'room-input form-control hidden'; // مخفي
+            inputRoom.className = 'room-input form-control hidden'; 
             inputRoom.placeholder = 'رقم الغرفة';
 
-            // إضافة النصوص الثابتة وحقل الإدخال إلى الخلية
             cell.appendChild(materialText);
             cell.appendChild(roomText);
             cell.appendChild(inputMaterial);
