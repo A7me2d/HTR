@@ -49,7 +49,7 @@ export class AssistComponent implements OnInit {
         link.className = 'dropdown-item custom-dropdown-item';
         // link.href = '#';
         link.textContent = doctor.subject;
-        link.addEventListener('click', () => this.displayData(doctor.id));
+        listItem.addEventListener('click', () => this.displayData(doctor.id));
         listItem.appendChild(link);
         doctorList.appendChild(listItem);
       });
